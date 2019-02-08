@@ -39,7 +39,7 @@ print(Y_TrainOne_Hot.shape)
 
 model = Sequential()
 
-model.add(Dense(units=3000,
+model.add(Dense(units=1000,
                 input_dim=10,
                 kernel_initializer='normal',
                 activation='relu'))
@@ -47,7 +47,7 @@ model.add(Dense(units=3000,
 model.add(Dropout(0.4))
 
 
-model.add(Dense(units=2000,
+model.add(Dense(units=1000,
                 kernel_initializer='normal',
                 activation='relu'))
 
@@ -58,21 +58,6 @@ model.add(Dense(units=1000,
                 kernel_initializer='normal',
                 activation='relu'))
 
-
-model.add(Dropout(0.4))
-
-model.add(Dense(units=500,
-                kernel_initializer='normal',
-                activation='relu'))
-
-                
-model.add(Dropout(0.4))
-
-model.add(Dense(units=250,
-                kernel_initializer='normal',
-                activation='relu'))
-
-
 model.add(Dense(units=10,
                 kernel_initializer='normal',
                 activation='softmax'))
@@ -82,14 +67,13 @@ print(model.summary())
 model.compile(loss='categorical_crossentropy',
                 optimizer='adam',metrics=['accuracy'])
 
-checkpoint = ModelCheckpoint('./lvinno.h5', monitor='val_acc', 
+checkpoint = ModelCheckpoint('./lvinno.h5', monitor='acc', 
                              verbose=1, save_best_only=True, mode='max')
 
 callbacks_list = [checkpoint]
 
 train_history = model.fit(x=X_train,
                           y=Y_TrainOne_Hot,
-                          validation_split=0.2,
                           epochs=100,
                           batch_size=20,
                           verbose=2,callbacks = callbacks_list)
