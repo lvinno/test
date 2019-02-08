@@ -39,7 +39,7 @@ print(Y_TrainOne_Hot.shape)
 
 model = Sequential()
 
-model.add(Dense(units=1000,
+model.add(Dense(units=3000,
                 input_dim=10,
                 kernel_initializer='normal',
                 activation='relu'))
@@ -47,7 +47,7 @@ model.add(Dense(units=1000,
 model.add(Dropout(0.4))
 
 
-model.add(Dense(units=500,
+model.add(Dense(units=2000,
                 kernel_initializer='normal',
                 activation='relu'))
 
@@ -55,6 +55,20 @@ model.add(Dense(units=500,
 model.add(Dropout(0.4))
 
 model.add(Dense(units=1000,
+                kernel_initializer='normal',
+                activation='relu'))
+
+
+model.add(Dropout(0.4))
+
+model.add(Dense(units=500,
+                kernel_initializer='normal',
+                activation='relu'))
+
+                
+model.add(Dropout(0.4))
+
+model.add(Dense(units=250,
                 kernel_initializer='normal',
                 activation='relu'))
 
