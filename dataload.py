@@ -76,7 +76,7 @@ train_history = model.fit(x=X_train,
                           y=Y_TrainOne_Hot,
                           epochs=30,
 			  validation_split=0.2,
-                          batch_size=20,
+                          batch_size=200,
                           verbose=2,callbacks = callbacks_list)
 
 
