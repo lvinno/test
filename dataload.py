@@ -44,20 +44,20 @@ model.add(Dense(units=1000,
                 kernel_initializer='normal',
                 activation='relu'))
 
-model.add(Dropout(0.2))
+model.add(Dropout(0.4))
 
 
-model.add(Dense(units=10000,
+model.add(Dense(units=500,
                 kernel_initializer='normal',
                 activation='relu'))
 
-model.add(Dense(units=5000,
-                kernel_initializer='normal',
-                activation='relu'))
+
+model.add(Dropout(0.4))
 
 model.add(Dense(units=1000,
                 kernel_initializer='normal',
                 activation='relu'))
+
 
 model.add(Dense(units=10,
                 kernel_initializer='normal',
