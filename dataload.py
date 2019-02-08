@@ -47,16 +47,10 @@ model.add(Dense(units=1000,
 model.add(Dropout(0.4))
 
 
-model.add(Dense(units=1000,
+model.add(Dense(units=500,
                 kernel_initializer='normal',
                 activation='relu'))
 
-
-model.add(Dropout(0.4))
-
-model.add(Dense(units=1000,
-                kernel_initializer='normal',
-                activation='relu'))
 
 model.add(Dense(units=10,
                 kernel_initializer='normal',
@@ -74,7 +68,7 @@ callbacks_list = [checkpoint]
 
 train_history = model.fit(x=X_train,
                           y=Y_TrainOne_Hot,
-                          epochs=30,
+                          epochs=100,
 			  validation_split=0.2,
                           batch_size=200,
                           verbose=2,callbacks = callbacks_list)
