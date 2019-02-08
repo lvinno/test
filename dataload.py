@@ -74,7 +74,8 @@ callbacks_list = [checkpoint]
 
 train_history = model.fit(x=X_train,
                           y=Y_TrainOne_Hot,
-                          epochs=100,
+                          epochs=30,
+			  validation_split=0.2,
                           batch_size=20,
                           verbose=2,callbacks = callbacks_list)
 
